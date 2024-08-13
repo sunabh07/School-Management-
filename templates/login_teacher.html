@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %} Teacher Login {% endblock title %}
+
+{% block s1 %}
+
+/* CSS (in style.css file) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background: url('static/smb.jpg') no-repeat center center/cover;
+}
+
+
+.container {
+    max-width: 300px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+select, input[type="text"], input[type="password"] {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    width: 100%;
+    height: 40px;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+#forgot-password, #register-new {
+    font-size: 14px;
+    color: #337ab7;
+    text-decoration: none;
+}
+
+#forgot-password:hover, #register-new:hover {
+    text-decoration: underline;
+}
+{% endblock s1 %}
+
+
+
+{% block body %}
+
+<div class="container">
+    <h1>Login As Teacher</h1>
+    <form method="POST" action="/loginteacher">
+        {% csrf_token %}
+       
+        <input type="text" id="login-input" name='name' placeholder="Enter email or phone number">
+        <input type="password" id="password" name='password' placeholder="Enter Password">
+        <button type="submit">Login</button>
+        <p>
+            <a href="forgot_password" id="forgot-password">Forgot Password?</a>
+            <a href="/teacher" id="register-new">Register as new</a>
+        </p>
+    </form>
+</div>
+
+{% endblock body %}

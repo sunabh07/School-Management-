@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %} Student Form {% endblock title %} 
+{% block s1 %}<style>
+    .{
+        text:center;
+      }
+      body{
+        background: url('static/smb.jpg') no-repeat center center/cover;
+      }
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+  
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size:1.3em;
+      color:rgb(0,0,139);
+      font-family:cursive;
+    }
+  
+    input[type="text"], input[type="email"], input[type="number"], input[type="tel"], select {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+    }
+  
+    textarea {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+    }
+  
+    input[type="submit"] {
+      width: 100%;
+      padding: 5px;
+      margin-top: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+  </style>{% endblock s1 %}
+{% block body %}
+
+  
+  <form method="POST" action="/student">
+    {% csrf_token %}
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+  
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone"><br><br>
+    
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" placeholder="Enter your Address"></textarea><br><br>
+
+    <label for="aadhar_no">Aadhar Number:</label>
+    <input type="number" id="aadhar_no" name="aadhar_no" placeholder="Enter your aadhar number"><br><br>
+  
+  
+    <label for="class_of_stud">Class of Study:</label>
+    <input type="number" id="class_of_stud" name="class_of_stud" placeholder="Enter your class" ><br><br>
+  
+    <label for="student_id">Student ID:</label>
+    <input type="text" id="student_id" name="student_id" placeholder="Enter your student_id"><br><br>
+
+    <label for="password">Password:</label>
+    <input type="text" id="password" name="password" placeholder="Enter your password"><br><br>
+  
+    {% comment %} <input type="submit" value="Submit"> {% endcomment %}
+    <button class="btn btn-primary text-center" type="submit">Submit</button>
+
+  </form>
+
+{% endblock body %}
+
+

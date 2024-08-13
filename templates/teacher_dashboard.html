@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Teacher Dashboard{% endblock title %}
+
+{% block s1 %}
+<style>
+  body{
+  background: url('static/DSC_0086.jpg') no-repeat center center/cover;
+  }
+  .container-t {
+  
+    position: relative;
+    margin: 10px auto;
+    max-width: 800px; /* Adjust the maximum width as needed */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+    margin-top:150px;
+  }
+
+  p {
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .dashboard-links {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+  }
+
+  .dashboard-links:hover {
+    background-color: #0056b3;
+  }
+
+  .dashboard-links:active {
+    background-color: #004080;
+  }
+</style>
+{% endblock s1 %}
+
+{% block body %}
+
+
+<div>
+
+  
+  <div class="container-t">
+    <p>Welcome, teacher {{ name }}. You have been assigned these classes:</p>
+    {% for year in classes %}
+    <p>{{ year }}</p>
+    {% endfor %}
+    <b><a href="student" class="dashboard-links">Add a new Student</a></b>
+    <b><a href="mark1" class="dashboard-links">Evaluate Marks</a></b>
+    <b><a href="attendance1" class="dashboard-links">Evaluate Attendance</a></b>
+    <b><a href="notice1" class="dashboard-links">Send Notice</a></b>
+  </div>
+  
+</div>
+{% endblock body %}

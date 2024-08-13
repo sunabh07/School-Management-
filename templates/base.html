@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock title %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <style>
+      /* styles.css */
+    
+      
+      .navbar {
+          background-color: #1f1f1f; /* Dark navbar background */
+          padding: 15px 20px;
+          position: relative;
+          width: 100%;
+          top: 0;
+          left: 0;
+          z-index: 1000;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      
+      .container-nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          max-width: 1200px;
+          margin: 0 auto;
+      }
+      
+      .logo {
+          color: #ffcc00; /* Bright logo color */
+          font-size: 1.7em;
+          text-decoration: none;
+          font-weight: bold;
+      }
+      
+      .nav-links {
+          list-style: none;
+          display: flex;
+          margin: 0;
+          padding: 0;
+      }
+      
+      .nav-links li {
+          margin-left: 20px;
+          position: relative; /* For dropdown positioning */
+      }
+      
+      .nav-links a {
+          color: #ffffff; /* Light link color */
+          text-decoration: none;
+          font-size: 1.4em;
+          padding: 5px 10px;
+          transition: background-color 0.3s ease, color 0.3s ease;
+          border-radius: 5px;
+      }
+      
+      .nav-links a:hover {
+          background-color: #ffcc00; /* Bright hover background */
+          color: #333333; /* Dark text color on hover */
+      }
+      
+      .nav-links a:focus {
+          outline: none;
+          background-color: #ff9900; /* Different color for focused link */
+          color: #ffffff;
+      }
+      
+      /* Dropdown styles */
+      .dropdown {
+          display: inline-block;
+      }
+      
+      .dropbtn {
+          cursor: pointer;
+      }
+      
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #333333;
+          min-width: 160px;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          border-radius: 5px;
+      }
+      
+      .dropdown-content a {
+          color: #ffffff;
+          padding: 10px 15px;
+          text-decoration: none;
+          display: block;
+          transition: background-color 0.3s ease, color 0.3s ease;
+          border-radius: 5px;
+      }
+      
+      .dropdown-content a:hover {
+          background-color: #ffcc00; /* Bright hover background */
+          color: #333333; /* Dark text color on hover */
+      }
+      
+      /* Show the dropdown menu on hover */
+      .dropdown:hover .dropdown-content {
+          display: block;
+      }
+      
+          
+         
+          
+          
+
+          {% block s1 %}{% endblock s1 %}
+    </style>
+    <body>
+       
+      {% if messages %}    
+      {% for message in messages %}  
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+        {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+      {% endif %}   
+      
+
+
+
+        
+          <nav class="navbar">
+            <div class="container-nav">
+                <a href="/" class="logo">St. Paul's School</a>
+                <ul class="nav-links">
+                   
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <li class="dropdown">
+                      <a href="#login" class="dropbtn">Login</a>
+                      <div class="dropdown-content">
+                          <a href="loginteacher">Login Teacher</a>
+                          <a href="loginstudent">Login Student</a>
+                      </div>
+                  </li>
+                  <li><a href="payment2">Pay Fees</a></li>
+                </ul>
+            </div>
+        </nav>
+
+   
+    
+    {% block body %}{% endblock body %}  
+       
+       
+        
+    
+    <script> 
+      
+      {% block script %}
+      
+      {% endblock script %}
+      
+    </script>
+  </body>
+    </html>

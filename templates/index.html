@@ -1,0 +1,311 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock title %}
+{% block s1 %}
+/* styles.css */
+body, html {
+    font-family: 'Arial, sans-serif';
+}
+
+.hero-section {
+    background: url('static/DSC_0086.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+.cta-button {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff9900;
+}
+
+.about-us-section {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.about-us-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    margin: 20px;
+    color: #555;
+    text-align: left;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    margin: 20px;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* styles.css */
+/* Footer Section */
+.footer {
+    background-color: #1f1f1f; /* Dark background color */
+    color: #ffffff; /* Light text color */
+    padding: 40px 20px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer-column h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ffcc00; /* Bright heading color */
+}
+
+.footer-column p,
+.footer-column ul {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ffffff; /* Light link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffcc00; /* Bright hover color */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #bbbbbb; /* Light gray color */
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.love_counter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .counter-Txt {
+    width: calc(25% - 20px); /* 25% width with 20px gap */
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .counter-Txt img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+  }
+  
+  .counter-value {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .love_count {
+    font-size: 36px;
+    font-weight: bold;
+    color: #666;
+  }
+  
+  .counter-Txt p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 1200px) {
+   .counter-Txt {
+      width: calc(33.33% - 20px); /* 33.33% width with 20px gap */
+    }
+  }
+  
+  @media (max-width: 992px) {
+   .counter-Txt {
+      width: calc(50% - 20px); /* 50% width with 20px gap */
+    }
+  }
+  
+  @media (max-width: 768px) {
+   .counter-Txt {
+      width: 100%; /* full width on small screens */
+    }
+  }
+{% endblock s1 %}
+
+{% block body %}
+<header class="hero-section">
+    <div class="hero-content">
+        <h1>Welcome to St. Paul's school</h1>
+        <p>Empowering Students for a Brighter Future</p>
+        <a href="#about-us" class="cta-button">Learn More</a>
+    </div>
+</header>
+
+<!-- About Us Section -->
+<section id="about-us" class="about-us-section">
+    <div class="container">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+<p>St. Paul's Senior Secondary School, Shastri Nagar, Jodhpur is one of the many institutions run by the Roman Catholic Diocesan Education Society, Ajmer, in Rajasthan. The school is entrusted to the Diocesan Fathers. It is an English Medium School, which prepares for the All India Secondary School Examination (Class X) and the All India Senior School Certificate Examination (Class XII) of the Central Board of Secondary Education, Delhi.</p>
+    <p>This school tries to provide various avenues which would nurture the talents of its students. It gives opportunities for an all-round development of their personality which would eventually bring forth intellectually well developed, emotionally matured and socially committed citizens for India</p>
+                <p></p>
+            </div>
+            <div class="about-image">
+                <img src="static/stpaul.jpg" alt="About St. Paul's" height=600px >
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="w-100 ml-0 mt-3" style="background-color:#F5F5F5; min-width:101%">
+    <div class="love_counter row justify-content-center w-100" id="counter">
+    <div class="col-sm-3 counter-Txt rounded"><img src="static/reading-book.png" alt="/contents/iitbhu/img/icon/reading-book.png" style="filter: grayscale(65%);"><span class="counter-value" data-count="10"> </span>
+    <div class="love_count">6495</div>
+    <p><span style="font-size:12px; ">Students</span></p></div>
+    <div class="col-sm-3 counter-Txt"><img src="static/post_graduate.png" alt="/contents/iitbhu/img/icon/post_graduate.png" style="filter: grayscale(65%);"><span class="counter-value" data-count="25"> </span>
+    <div class="love_count">3500+</div>
+    <p><span style="font-size:12px;">Students above 95%</span></p></div>
+    <div class="col-sm-3 counter-Txt margin-bot-35"><img src="static/female-student.png" alt="/contents/iitbhu/img/icon/female-student.png" style="filter: grayscale(65%);"><span class="counter-value" data-count="25"></span>
+    <div class="love_count">1840</div>
+    <p><span style="font-size:12px;"> Female Students</span></p></div>
+    </div>
+    <div class="row love_counter mb-3 justify-content-center w-100" id="counter">
+    <div class="col-sm-3 counter-Txt rounded"><img src="static/faculty.png" alt="/contents/iitbhu/img/icon/faculty.png" style="filter: grayscale(65%);" width="64px;"><span class="counter-value" data-count="10"> </span>
+    <div class="love_count">348</div>
+    <p><span style="font-size:14px;">Faculty</span></p></div>
+    </div>
+    </div>
+
+
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-column">
+            <h3>Contact Information</h3>
+            <p>St. Paul's School</p>
+            <p>Sharstri Circle</p>
+            <p>Jodhpur, Rajasthan 342001</p>
+            <p>Email: info@stpauls.edu</p>
+            <p>Phone: +91 935858648</p>
+        </div>
+        <div class="footer-column">
+            <h3>Important Links</h3>
+            <ul>
+                <li><a href="#privacy-policy">Privacy Policy</a></li>
+                <li><a href="#terms-of-service">Terms of Service</a></li>
+                <li><a href="#admissions">Admissions</a></li>
+                <li><a href="contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Opening Hours</h3>
+            <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+            <p>Saturday: 9:00 AM - 1:00 PM</p>
+            <p>Sunday: Closed</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 St. Paul's. All Rights Reserved.</p>
+    </div>
+</footer>
+
+{% endblock body %}

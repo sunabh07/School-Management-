@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}About Subject{% endblock title %}
+{% block s1 %}
+h1{
+    margin-left:650px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+    
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    background-color: rgb(173, 216, 230);
+    border-bottom: 1px solid #ddd;
+   
+}
+td{
+
+    color:red;
+}
+th{
+    
+    background-color: rgba(247, 202, 201,54);
+}
+tr:hover {
+    background-color: #f5f5f5;
+}
+{% endblock s1 %}
+
+
+{% block body %}
+
+<h1>Teachers for Class {{ class}}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subjects</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers_info %}
+            <tr>
+                <td>{{ teacher.name }}</td>
+                <td>{{ teacher.email }}</td>
+                <td>{{ teacher.subjects }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock body %}

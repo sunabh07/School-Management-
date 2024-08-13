@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block title %} About Us{% endblock title %}
+{% block s1 %}
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('static/slider003.jpg');
+    {% comment %} background-size: cover; {% endcomment %}
+    background-size: 90vw 90vh;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 0px;
+    margin-top:230px;
+    color:#ffcc00;
+}
+
+.about {
+    padding: 2em;
+}
+
+.about h2 {
+    margin-top: 0;
+}
+
+.mission {
+    background-color: #f7f7f7;
+    padding: 2em;
+}
+
+.mission h2 {
+    margin-top: 0;
+}
+
+.mission ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mission li {
+    margin-bottom: 10px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    clear: both;
+}
+@media only screen and (max-width: 768px) {
+    /* Hero Section */
+  .hero {
+    height: 300px;
+    background-size: 100% 300px;
+    background-position: center;
+  }
+  .hero-text {
+    font-size: 24px;
+    padding: 20px;
+  }
+  
+  /* Content */
+  .content {
+    padding: 20px;
+  }
+  .content h2 {
+    font-size: 24px;
+  }
+  .content p {
+    font-size: 16px;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 10px;
+    text-align: center;
+  }
+  .footer-links {
+    display: none;
+  }
+}
+{% endblock s1 %}
+
+{% block body %}
+<main>
+    <section class="hero">
+       
+        <h1>About St. Paul's School</h1>
+    </section>
+    <section class="about">
+        <h2>Welcome to St. Paul's School</h2>
+        <p>St. Pauls Senior Secondary School, Shastri Nagar, Jodhpur is one of the many institutions run by the Roman Catholic Diocesan Education Society, Ajmer, in Rajasthan. The school is entrusted to the Diocesan Fathers. It is an English Medium School, which prepares for the All India Secondary School Examination (Class X) and the All India Senior School Certificate Examination (Class XII) of the Central Board of Secondary Education, Delhi.</p>
+
+        <p> This school tries to provide various avenues which would nurture the talents of its students. It gives opportunities for an all-round development of their personality which would eventually bring forth intellectually well developed, emotionally matured and socially committed citizens for India.</p>
+        <img src="static/about.jpg" alt="About Image">
+    </section>
+    <section class="mission">
+        <h2>Our Tradition</h2>
+        <b><p>In our school we take pride in the following traditions:</p></b>
+        <ul style="list-style-type:disc;">
+            <li>To accept whatever work assigned to us as our rightful share.</li>
+                <li>To be courteous and sportsman like with opposing teams and with officials.</li>
+                <li>To rise and show due respect when any Father, Teacher or Visitor enters any of our room.</li>
+            <li>To respect the liberty and the rights of our students.</li>
+                <li>To offer help to any unattended visitor who happen to be in the school premises.</li>
+                <li>To be friendly with all in and out of the school.</li>
+        </ul>
+    </section>
+
+
+</main>
+
+<footer>
+    <p>&copy; 2023 St. Paul's School, Jodhpur</p>
+</footer>
+{% endblock body %}

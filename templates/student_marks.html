@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}Student Marks{% endblock title %}
+{% block s1 %}
+<style>
+    /* Container and text styles */
+    .attendance-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    p{
+        margin:20px;
+        margin-left:650px;
+        font-style:bold;
+        font-size:1.7em;
+        font-family:cursive;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+    
+    .subject {
+        background-color: #e0f7fa;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+    
+    .subject:hover {
+        background-color: #b2ebf2;
+        color: #00796b;
+    }
+    
+    .attendance {
+        color: #00796b;
+        transition: color 0.3s ease-in-out;
+    }
+
+    
+    
+    /* Hover effect for attendance value */
+    .subject:hover .attendance {
+        color: #004d40;
+    }
+
+    
+    .status-low{
+        color:rgb(255, 99, 71);
+    }
+    .status-high{
+        color:rgb(60, 179, 113);
+    }
+</style>
+{% endblock s1 %}
+
+{% block body %}
+<div class="attendance-container">
+    <b><p>Welcome  {{name}}!</p></b>
+    <table>
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="subject">
+                <td>Physics</td>
+                <td><span class="attendance">{{m_physics}}</span></td>
+                <td>
+                    {% if physics_status == 'Low' %}
+                      <span style="color: red">{{ physics_status }}</span>
+                    {% else %}
+                      <span style="color: green">{{ physics_status }}</span>
+                    {% endif %}
+                  </td>
+            </tr>
+
+            <tr class="subject">
+                <td>Chemistry</td>
+                <td><span class="attendance">{{m_chemistry}}</span></td>
+                <td>
+                    {% if chemistry_status == 'Low' %}
+                    <span style="color: red">{{ chemistry_status }}</span>
+                  {% else %}
+                    <span style="color: green">{{ chemistry_status }}</span>
+                  {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock body %}
+
+
